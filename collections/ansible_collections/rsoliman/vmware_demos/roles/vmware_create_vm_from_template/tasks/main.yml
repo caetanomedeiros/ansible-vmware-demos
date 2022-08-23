@@ -25,7 +25,8 @@
     name: "{{ vm_name }}"
     state: poweredon
     template: "{{ vm_template }}"
-    esxi_hostname: "{{ vm_esxi_name }}"
+    #esxi_hostname: "{{ vm_esxi_name }}"
+    cluster: "{{ vm_cluster_name }}"
     wait_for_ip_address: yes
   register: temp_created_vm
   when: vm_disk_size is not defined or vm_mem_size is not defined or vm_cpu_count is not defined or vm_disk_size == "" or vm_mem_size == "" or vm_cpu_count == ""
@@ -44,7 +45,8 @@
     name: "{{ vm_name }}"
     state: poweredon
     template: "{{ vm_template }}"
-    esxi_hostname: "{{ vm_esxi_name }}"
+    #esxi_hostname: "{{ vm_esxi_name }}"
+    cluster: "{{ vm_cluster_name }}"
     wait_for_ip_address: yes
     disk:
     - size_gb: "{{ vm_disk_size }}"
